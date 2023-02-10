@@ -20,8 +20,8 @@ while (number > 0)
     number = number / 10;
 }
 if (t == total)
-Console.Write("Палиндром");
+Console.WriteLine("да");
 else if (amount < 5 || amount > 5)
 Console.WriteLine("Вы ввели не пятизначное число");
 else
-Console.Write("He палиндром");
+Console.WriteLine("нeт");
