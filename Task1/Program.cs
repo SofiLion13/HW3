@@ -4,45 +4,24 @@
 // 12821 -> да
 // 23432 -> да
 
-// using System;
-// public class IsPalindrom
-// {
-//     public static void Main (string[] args)
-//     {
-//         int number, total = 0, t, reverse;
-//         Console.Write("Введите пятизначное число:");
-//         number = int.Parse(Console.ReadLine());
-//         t = number;
-//         while (number > 0)
-//         {
-//             reverse = number % 10;
-//             total = (total * 10) + reverse;
-//             number = number / 10;
-//         }
-//         if (t == total)
-//         Console.Write("Палиндром");
-//         else
-//         Console.Write("He палиндром");
-//     }
-// }
-
-class IsPalindrom
+int GetNumber (string message)
 {
-    static void Main (string[] args)
-    {
-        int number, total = 0, t, reverse;
-        Console.Write("Введите пятизначное число: ");
-        number = int.Parse(Console.ReadLine());
-        t = number;
-        while (number > 0)
-        {
-            reverse = number % 10;
-            total = (total * 10) + reverse;
-            number = number / 10;
-        }
-        if (t == total)
-        Console.Write("Палиндром");
-        else
-        Console.Write("He палиндром");
-    }
+    Console.WriteLine(message);
+    int number = Convert.ToInt32(Console.ReadLine());
+    return number;
 }
+int number = GetNumber ("Введите пятизначное число"), total = 0, t = number, reverse;
+int amount = number.ToString().Length;
+
+while (number > 0)
+{
+    reverse = number % 10;
+    total = (total * 10) + reverse;
+    number = number / 10;
+}
+if (t == total)
+Console.Write("Палиндром");
+else if (amount < 5 || amount > 5)
+Console.WriteLine("Вы ввели не пятизначное число");
+else
+Console.Write("He палиндром");
